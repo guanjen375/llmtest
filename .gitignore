@@ -1,0 +1,10 @@
+# Created by setup.sh
+/.venv/
+/.tools/
+/third_party/
+*.egg-info/
+__pycache__/
+
+# Run output
+/logs/
+/setup.log

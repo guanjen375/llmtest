@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vllm-openreg"
+version = "0.1.0"
+description = "Minimal out-of-tree vLLM platform plugin for OpenReg, PyTorch's simulated PrivateUse1 device"
+requires-python = ">=3.10"
+# vllm, torch and torch_openreg are installed by setup.sh: torch_openreg has to be
+# built against the exact torch that vllm pinned, which a resolver cannot express.
+dependencies = []
+
+[project.entry-points."vllm.platform_plugins"]
+openreg = "vllm_openreg:register"
+
+[tool.setuptools]
+packages = ["vllm_openreg"]
